@@ -29,7 +29,7 @@
                     </div>
 
                     <div class="mt-4 flex items-center justify-end">
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-primary btn-sm">
                             Chirp
                         </button>
                     </div>

@@ -29,10 +29,10 @@
                     </div>
 
                     <div class="card-actions justify-between mt-4">
-                        <a href="/" class="btn btn-ghost">
+                        <a href="/" class="btn btn-ghost btn-sm">
                             Cancel
                         </a>
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-primary btn-sm">
                             Update Chirp
                         </button>
                     </div>
