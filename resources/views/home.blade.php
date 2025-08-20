@@ -28,10 +28,7 @@
                         @enderror
                     </div>
 
-                    <div class="mt-4 flex items-center justify-between">
-                        <span class="text-sm opacity-60">
-                            <span id="charCount">0</span>/255 characters
-                        </span>
+                    <div class="mt-4 flex items-center justify-end">
                         <button type="submit" class="btn btn-primary">
                             Chirp
                         </button>
@@ -58,14 +55,4 @@
             @endforelse
         </div>
     </div>
-
-    <script>
-        // Character counter
-        const textarea = document.querySelector('textarea[name="message"]');
-        const charCount = document.getElementById('charCount');
-
-        textarea.addEventListener('input', () => {
-            charCount.textContent = textarea.value.length;
-        });
-    </script>
 </x-layout>
