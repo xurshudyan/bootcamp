@@ -4,9 +4,10 @@
     <div class="card-body">
         <div class="flex space-x-3">
             <div class="avatar">
-                <div class="w-10 rounded-full">
-                    <img src="https://avatars.laravel.cloud/{{ urlencode($chirp->user->email) }}" 
-                         alt="{{ $chirp->user->name }}'s avatar" />
+                <div class="size-8 rounded-full">
+                    <img src="https://avatars.laravel.cloud/{{ urlencode($chirp->user->email) }}"
+                         alt="{{ $chirp->user->name }}'s avatar"
+                         class="rounded-full" />
                 </div>
             </div>
 

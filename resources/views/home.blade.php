@@ -11,11 +11,11 @@
             <div class="card-body">
                 <form method="POST" action="/chirps">
                     @csrf
-                    <div class="form-control">
+                    <div class="form-control w-full">
                         <textarea
                             name="message"
                             placeholder="What's on your mind?"
-                            class="textarea textarea-bordered resize-none @error('message') textarea-error @enderror"
+                            class="textarea textarea-bordered w-full resize-none @error('message') textarea-error @enderror"
                             rows="3"
                             maxlength="255"
                             required
