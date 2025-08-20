@@ -3,11 +3,14 @@
 <div class="card bg-base-100 shadow">
     <div class="card-body">
         <div class="flex space-x-3">
-            <div class="avatar placeholder">
-                <div class="bg-neutral text-neutral-content rounded-full w-10">
-                    <span class="text-sm font-semibold">
-                        {{ strtoupper(substr($chirp->user->name, 0, 1)) }}
-                    </span>
+            @php
+                $vibes = ['sunset', 'ocean', 'daybreak', 'bubble', 'forest', 'fire', 'crystal', 'ice', 'stealth'];
+                $vibe = $vibes[$chirp->user->id % count($vibes)];
+            @endphp
+            <div class="avatar">
+                <div class="w-10 rounded-full">
+                    <img src="https://avatars.laravel.cloud/{{ urlencode($chirp->user->email) }}?vibe={{ $vibe }}" 
+                         alt="{{ $chirp->user->name }}'s avatar" />
                 </div>
             </div>
 
