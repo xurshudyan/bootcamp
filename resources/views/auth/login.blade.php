@@ -5,7 +5,7 @@
 
     <div class="hero min-h-[calc(100vh-16rem)]">
         <div class="hero-content flex-col">
-            <div class="card w-96 shadow-2xl bg-base-100">
+            <div class="card w-96 bg-base-100">
                 <div class="card-body">
                     <h1 class="text-3xl font-bold text-center">Welcome Back</h1>
 
@@ -14,7 +14,7 @@
 
                         <!-- Email -->
                         <div class="form-control">
-                            <label class="label" for="email">
+                            <label class="label mb-1.5" for="email">
                                 <span class="label-text">Email</span>
                             </label>
                             <input type="email"
@@ -33,7 +33,7 @@
 
                         <!-- Password -->
                         <div class="form-control mt-4">
-                            <label class="label" for="password">
+                            <label class="label mb-1.5" for="password">
                                 <span class="label-text">Password</span>
                             </label>
                             <input type="password"
@@ -53,7 +53,7 @@
                             <label class="label cursor-pointer justify-start">
                                 <input type="checkbox"
                                        name="remember"
-                                       class="checkbox checkbox-primary">
+                                       class="checkbox">
                                 <span class="label-text ml-2">Remember me</span>
                             </label>
                         </div>

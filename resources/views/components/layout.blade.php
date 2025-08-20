@@ -11,7 +11,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="min-h-screen flex flex-col bg-base-200">
-    <nav class="navbar bg-base-100 shadow-sm">
+    <nav class="navbar bg-base-100">
         <div class="navbar-start">
             <a href="/" class="btn btn-ghost text-xl">🐦 Chirper</a>
         </div>
@@ -20,11 +20,11 @@
                 <span class="text-sm">{{ auth()->user()->name }}</span>
                 <form method="POST" action="/logout" class="inline">
                     @csrf
-                    <button type="submit" class="btn btn-ghost btn-sm">Logout</button>
+                    <button type="submit" class="btn btn-ghost">Logout</button>
                 </form>
             @else
-                <a href="/login" class="btn btn-ghost btn-sm">Sign In</a>
-                <a href="/register" class="btn btn-primary btn-sm">Sign Up</a>
+                <a href="/login" class="btn btn-ghost">Sign In</a>
+                <a href="/register" class="btn btn-primary">Sign Up</a>
             @endauth
         </div>
     </nav>
@@ -45,7 +45,7 @@
         {{ $slot }}
     </main>
 
-    <footer class="footer footer-center p-4 bg-base-300 text-base-content">
+    <footer class="footer footer-center p-5 bg-base-300 text-base-content text-xs">
         <div>
             <p>© {{ date('Y') }} Chirper - Built with Laravel and ❤️</p>
         </div>
