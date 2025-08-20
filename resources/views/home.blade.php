@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:title>
-        Chirper - Home Feed
+        Home Feed
     </x-slot:title>
 
     <div class="max-w-2xl mx-auto">
