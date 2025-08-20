@@ -4,7 +4,7 @@
     <div class="card-body">
         <div class="flex space-x-3">
             <div class="avatar">
-                <div class="size-8 rounded-full">
+                <div class="w-12 h-12 rounded-full">
                     <img src="https://avatars.laravel.cloud/{{ urlencode($chirp->user->email) }}"
                          alt="{{ $chirp->user->name }}'s avatar"
                          class="rounded-full" />
@@ -21,6 +21,10 @@
                         <p class="text-sm text-base-content/60">
                             {{ $chirp->created_at->diffForHumans() }}
                         </p>
+                        @if($chirp->updated_at->gt($chirp->created_at->addSeconds(5)))
+                            <span class="text-base-content/60">·</span>
+                            <span class="text-sm text-base-content/60 italic">edited</span>
+                        @endif
                     </div>
 
                     @if (auth()->check() && auth()->id() === $chirp->user_id)
