@@ -1,6 +1,8 @@
 <?php
 
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Auth\Login;
+use App\Http\Controllers\Auth\Logout;
+use App\Http\Controllers\Auth\Register;
 use App\Http\Controllers\ChirpController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,20 +17,20 @@ Route::middleware('auth')->group(function () {
 });
 
 // Registration routes
-Route::get('/register', [AuthController::class, 'showRegistrationForm'])
+Route::view('/register', 'auth.register')
     ->middleware('guest')
     ->name('register');
-Route::post('/register', [AuthController::class, 'register'])
+Route::post('/register', Register::class)
     ->middleware('guest');
 
 // Login routes
-Route::get('/login', [AuthController::class, 'showLoginForm'])
+Route::view('/login', 'auth.login')
     ->middleware('guest')
     ->name('login');
-Route::post('/login', [AuthController::class, 'login'])
+Route::post('/login', Login::class)
     ->middleware('guest');
 
 // Logout route
-Route::post('/logout', [AuthController::class, 'logout'])
+Route::post('/logout', Logout::class)
     ->middleware('auth')
     ->name('logout');

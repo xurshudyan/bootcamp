@@ -4,7 +4,7 @@
     <div class="card-body">
         <div class="flex space-x-3">
             <div class="avatar">
-                <div class="w-12 h-12 rounded-full">
+                <div class="size-10 rounded-full">
                     <img src="https://avatars.laravel.cloud/{{ urlencode($chirp->user->email) }}"
                          alt="{{ $chirp->user->name }}'s avatar"
                          class="rounded-full" />
