@@ -8,16 +8,96 @@
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
-    
+
     --animate-fade-out: fade-out 4s ease-in-out forwards;
-    
+
     @keyframes fade-out {
-        0%, 70% { 
-            opacity: 1; 
+        0%, 70% {
+            opacity: 1;
         }
-        100% { 
-            opacity: 0; 
+        100% {
+            opacity: 0;
             pointer-events: none;
         }
     }
 }
+
+/* Apply when your custom theme is active */
+:root:has(input.theme-controller[value=laravelChirp]:checked),
+[data-theme="laravelChirp"] {
+  /* Tokens you likely already set */
+  --color-base-100: #faf9f6;
+  --color-base-content: #111113;
+
+  --border: 1px;
+  --border-color-soft: rgba(0,0,0,0.06);
+
+  /* Compact radii */
+  --radius-xs: 3px;
+  --radius-sm: 4px;
+  --radius-field: 6px;
+  --radius-box: 8px;
+
+  /* DaisyUI hooks */
+  --radius-selector: var(--radius-sm);
+  --radius-field: var(--radius-field);
+  --radius-box: var(--radius-box);
+
+  /* Shallow, crisp shadows */
+  --shadow-card: 0 0 1px rgba(0,0,0,0.03), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-card-hover: 0 0 1px rgba(0,0,0,0.03), 0 2px 4px rgba(0,0,0,0.08);
+}
+
+/* Card: keep your `card bg-base-100 shadow` classes; we override the feel */
+:where(.card) {
+  background: var(--color-base-100);
+  color: var(--color-base-content);
+  border-radius: var(--radius-box);
+  border: var(--border) solid var(--border-color-soft);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 200ms, transform 200ms;
+}
+:where(.card:hover) {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+/* Ensure Tailwind’s .shadow doesn’t fight our custom shadow */
+:where(.card.shadow) { box-shadow: var(--shadow-card) !important; }
+:where(.card.shadow:hover) { box-shadow: var(--shadow-card-hover) !important; }
+
+/* Card body: slightly tighter spacing to match the ref look */
+:where(.card .card-body) {
+  padding: 0.75rem 0.75rem 1rem; /* tweak as desired */
+}
+
+/* Ghost buttons: bordered, tidy radius, subtle hover */
+:where(.btn-ghost) {
+  border: var(--border) solid var(--border-color-soft);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  box-shadow: none;
+}
+:where(.btn-ghost:hover) {
+  background: rgba(0,0,0,0.03);
+}
+
+/* Extra: make .btn-xs look like small tidy pills */
+:where(.btn-xs) {
+  height: 1.5rem; /* 24px */
+  min-height: 1.5rem;
+  padding-inline: 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+/* Inputs (if they appear in other cards) */
+:where(.input, .textarea) {
+  border-radius: var(--radius-field);
+  border: var(--border) solid var(--border-color-soft);
+  background: #fff;
+}
+
+/* Muted separators (for timestamps/•) if you use them elsewhere */
+.text-base-content\/60 { color: color-mix(in oklab, var(--color-base-content) 60%, transparent) !important; }
