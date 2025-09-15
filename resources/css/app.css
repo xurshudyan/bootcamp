@@ -140,68 +140,62 @@ a:hover {
 }
 
 /* BUTTONS */
-:where(.btn) {
-    border-radius: var(--radius-sm);
+:where(.btn){
+    border-radius: 2px;              /* sharper corners */
     box-shadow: none;
-    padding-inline: 1rem;
-    /* default buttons: more L/R padding */
-}
+    font-weight: 500;                /* medium */
+    font-size: 1rem;                 /* Tailwind text-base */
+    line-height: 1.5rem;             /* align with text-base */
+    padding-inline: 1rem;            /* a bit more horizontal breathing room */
+  }
 
-:where(.btn-primary),
-:where(a.btn-primary) {
+  :where(.btn-primary),
+  :where(a.btn-primary){
     background: var(--color-primary);
     color: var(--color-primary-content);
     border: none;
-}
-
-:where(.btn-primary:hover),
-:where(a.btn-primary:hover) {
+  }
+  :where(.btn-primary:hover),
+  :where(a.btn-primary:hover){
     background: color-mix(in oklab, var(--color-primary) 85%, black);
-}
+  }
 
-:where(.btn-ghost),
-:where(a.btn-ghost) {
+  :where(.btn-ghost),
+  :where(a.btn-ghost){
     color: var(--text-12);
     border: var(--border) solid var(--border-color-soft);
     background: transparent;
-}
+  }
+  :where(.btn-ghost:hover),
+  :where(a.btn-ghost:hover){
+    background: rgba(0,0,0,0.03);
+  }
 
-:where(.btn-ghost:hover),
-:where(a.btn-ghost:hover) {
-    background: rgba(0, 0, 0, 0.03);
-    color: var(--text-12);
-    /* stop turning blue on hover */
-}
-
-/* Sizes */
-:where(.btn-sm) {
+  :where(.btn-sm){
     height: 2rem;
     min-height: 2rem;
-    padding-inline: .875rem;
-    /* bumped from .625rem */
-}
-
-:where(.btn-xs) {
+    padding-inline: .75rem;
+  }
+  :where(.btn-xs){
     height: 1.5rem;
     min-height: 1.5rem;
-    padding-inline: .625rem;
-    /* bumped from .5rem */
-    font-size: .75rem;
-    line-height: 1rem;
-}
+    padding-inline: .5rem;
+    font-size:.75rem;
+  }
+
 
 /* Toast-only success color */
-:where(.toast){
+:where(.toast) {
     --color-success: #598b6e;
     --color-success-content: #ffffff;
-  }
+}
 
-  /* Hairline border + ensure text/icons pick up the content color */
-  :where(.toast .alert-success){
+/* Hairline border + ensure text/icons pick up the content color */
+:where(.toast .alert-success) {
     background: var(--color-success);
     color: var(--color-success-content);
-    border: var(--border) solid rgba(0,0,0,0.08);
-  }
+    border: var(--border) solid rgba(0, 0, 0, 0.08);
+}
 
 /* “link-primary” utility should be Laravel red, not Tailwind blue */
 :where(.link-primary) {
