@@ -143,7 +143,7 @@ a:hover {
 :where(.btn){
     border-radius: 2px;              /* sharper corners */
     box-shadow: none;
-    font-weight: 500;                /* medium */
+    font-weight: 400;                /* medium */
     font-size: 1rem;                 /* Tailwind text-base */
     line-height: 1.5rem;             /* align with text-base */
     padding-inline: 1rem;            /* a bit more horizontal breathing room */

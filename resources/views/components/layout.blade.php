@@ -39,7 +39,7 @@
                     </defs>
                 </svg></a>
         </div>
-        <div class="navbar-end gap-2 px-4">
+        <div class="navbar-end gap-4 px-4">
             @auth
                 <span class="text-sm">{{ auth()->user()->name }}</span>
                 <form method="POST" action="/logout" class="inline">
