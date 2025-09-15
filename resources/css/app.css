@@ -27,150 +27,252 @@
 
 /* LIGHT THEME — Laravel Community vibe */
 :root:has(input.theme-controller[value=laravelChirper]:checked),
-[data-theme="laravelChirper"]{
-  color-scheme: light;
+[data-theme="laravelChirper"] {
+    color-scheme: light;
 
-  /* Canvas + text */
-  --color-base-50:  #fdfcfb;
-  --color-base-100: #faf9f6;     /* sand canvas */
-  --color-base-200: #f3f1ec;     /* subtle page sections (your bg-base-200) */
-  --color-base-300: #e6e3dc;
-  --color-base-content: #111113; /* near-black */
+    /* Canvas + text */
+    --color-base-50: #fdfcfb;
+    --color-base-100: #faf9f6;
+    /* sand canvas */
+    --color-base-200: #f3f1ec;
+    /* subtle page sections (your bg-base-200) */
+    --color-base-300: #e6e3dc;
+    --color-base-content: #111113;
+    /* near-black */
 
-  /* Text tones */
-  --text-12: var(--color-base-content);
-  --text-10: color-mix(in oklab, var(--color-base-content) 64%, transparent);
+    /* Text tones */
+    --text-12: var(--color-base-content);
+    --text-10: color-mix(in oklab, var(--color-base-content) 64%, transparent);
 
-  /* Brand / actions */
-  --color-primary: #ff2d20;         /* Laravel red */
-  --color-primary-content: #ffffff;
-  --color-secondary: #2f2f33;
-  --color-secondary-content: #ffffff;
-  --link: #2a69ff;                  /* docs/link blue */
-  --link-hover: color-mix(in oklab, #2a69ff 80%, black);
+    /* Brand / actions */
+    --color-primary: #ff2d20;
+    /* Laravel red */
+    --color-primary-content: #ffffff;
+    --color-secondary: #2f2f33;
+    --color-secondary-content: #ffffff;
+    --link: #2a69ff;
+    /* docs/link blue */
+    --link-hover: color-mix(in oklab, #2a69ff 80%, black);
 
-  /* Borders / elevation */
-  --border: 1px;
-  --border-color-soft: rgba(0,0,0,0.06);
-  --shadow-card: 0 0 1px rgba(0,0,0,0.03), 0 1px 2px rgba(0,0,0,0.06);
-  --shadow-card-hover: 0 0 1px rgba(0,0,0,0.03), 0 2px 4px rgba(0,0,0,0.08);
+    /* Borders / elevation */
+    --border: 1px;
+    --border-color-soft: rgba(0, 0, 0, 0.06);
+    --shadow-card: 0 0 1px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-card-hover: 0 0 1px rgba(0, 0, 0, 0.03), 0 2px 4px rgba(0, 0, 0, 0.08);
 
-  /* Radii */
-  --radius-xs: 3px;
-  --radius-sm: 4px;
-  --radius-field: 6px;
-  --radius-box: 8px;
+    /* Radii */
+    --radius-xs: 3px;
+    --radius-sm: 4px;
+    --radius-field: 6px;
+    --radius-box: 8px;
 
-  /* DaisyUI radius hooks */
-  --radius-selector: var(--radius-sm);
-  --radius-field: var(--radius-field);
-  --radius-box: var(--radius-box);
+    /* DaisyUI radius hooks */
+    --radius-selector: var(--radius-sm);
+    --radius-field: var(--radius-field);
+    --radius-box: var(--radius-box);
 
-  --depth: 1;
-  --noise: 1;
+    --depth: 1;
+    --noise: 1;
 }
 
 /* Page background & base text */
 html[data-theme="laravelChirper"],
-:root:has(input.theme-controller[value=laravelChirper]:checked) body{
-  color: var(--text-12);
+:root:has(input.theme-controller[value=laravelChirper]:checked) body {
+    color: var(--text-12);
 }
 
 /* Navbar = sand + hairline bottom */
-.navbar{
-  background: var(--color-base-100);
-  border-bottom: var(--border) solid var(--border-color-soft);
-  backdrop-filter: saturate(140%) blur(6px);
+.navbar {
+    background: var(--color-base-100);
+    border-bottom: var(--border) solid var(--border-color-soft);
+    backdrop-filter: saturate(140%) blur(6px);
 }
 
-/* Cards (keep your markup: `card bg-base-100 shadow`) */
-:where(.card){
-  background: var(--color-base-100);
-  color: var(--text-12);
-  border-radius: var(--radius-box);
-  border: var(--border) solid var(--border-color-soft);
-  box-shadow: var(--shadow-card);
-  transition: box-shadow 200ms, transform 200ms;
+/* Cards — no shadow, soft border, tidy radius */
+:where(.card) {
+    background: var(--color-base-100);
+    color: var(--text-12);
+    border-radius: var(--radius-box);
+    border: var(--border) solid var(--border-color-soft);
+    box-shadow: none !important;
+    /* kill all shadows */
+    transition: none;
+    /* no hover lift */
 }
-:where(.card:hover){ box-shadow: var(--shadow-card-hover); transform: translateY(-2px); }
-:where(.card.shadow){ box-shadow: var(--shadow-card) !important; }
-:where(.card.shadow:hover){ box-shadow: var(--shadow-card-hover) !important; }
-:where(.card .card-body){ padding: .75rem .75rem 1rem; }
+
+:where(.card:hover),
+:where(.card.shadow),
+:where(.card.shadow:hover) {
+    box-shadow: none !important;
+}
+
+:where(.card .card-body) {
+    padding: .875rem .875rem 1.125rem;
+}
+
+/* a hair more breathing room */
 
 /* INPUTS / TEXTAREAS */
-:where(.input, .textarea){
-  border-radius: var(--radius-field);
-  border: var(--border) solid var(--border-color-soft);
-  background: #fff;
+:where(.input, .textarea) {
+    border-radius: var(--radius-field);
+    border: var(--border) solid var(--border-color-soft);
+    background: #fff;
 }
-:where(.input:focus, .textarea:focus){
-  outline: 2px solid color-mix(in oklab, var(--color-primary) 25%, transparent);
-  outline-offset: 2px;
+
+:where(.input:focus, .textarea:focus) {
+    outline: 2px solid color-mix(in oklab, var(--color-primary) 25%, transparent);
+    outline-offset: 2px;
 }
 
 /* LINKS (site-wide) */
-a{ color: var(--link); }
-a:hover{ color: var(--link-hover); }
+a {
+    color: var(--link);
+}
+
+a:hover {
+    color: var(--link-hover);
+}
 
 /* Fix: anchor-buttons should NOT be blue like links */
-:where(a.btn){ color: inherit; text-decoration: none; }
+:where(a.btn) {
+    color: inherit;
+    text-decoration: none;
+}
 
 /* BUTTONS */
-:where(.btn){ border-radius: var(--radius-sm); box-shadow: none; }
-:where(.btn-primary),
-:where(a.btn-primary){ background: var(--color-primary); color: var(--color-primary-content); border: none; }
-:where(.btn-primary:hover),
-:where(a.btn-primary:hover){ background: color-mix(in oklab, var(--color-primary) 85%, black); }
-:where(.btn-ghost),
-:where(a.btn-ghost){
-  color: var(--text-12);
-  border: var(--border) solid var(--border-color-soft);
-  background: transparent;
+:where(.btn) {
+    border-radius: var(--radius-sm);
+    box-shadow: none;
+    padding-inline: 1rem;
+    /* default buttons: more L/R padding */
 }
+
+:where(.btn-primary),
+:where(a.btn-primary) {
+    background: var(--color-primary);
+    color: var(--color-primary-content);
+    border: none;
+}
+
+:where(.btn-primary:hover),
+:where(a.btn-primary:hover) {
+    background: color-mix(in oklab, var(--color-primary) 85%, black);
+}
+
+:where(.btn-ghost),
+:where(a.btn-ghost) {
+    color: var(--text-12);
+    border: var(--border) solid var(--border-color-soft);
+    background: transparent;
+}
+
 :where(.btn-ghost:hover),
-:where(a.btn-ghost:hover){ background: rgba(0,0,0,0.03); }
-:where(.btn-sm){ height: 2rem; min-height: 2rem; padding-inline: .625rem; }
-:where(.btn-xs){ height: 1.5rem; min-height: 1.5rem; padding-inline: .5rem; font-size:.75rem; }
+:where(a.btn-ghost:hover) {
+    background: rgba(0, 0, 0, 0.03);
+    color: var(--text-12);
+    /* stop turning blue on hover */
+}
+
+/* Sizes */
+:where(.btn-sm) {
+    height: 2rem;
+    min-height: 2rem;
+    padding-inline: .875rem;
+    /* bumped from .625rem */
+}
+
+:where(.btn-xs) {
+    height: 1.5rem;
+    min-height: 1.5rem;
+    padding-inline: .625rem;
+    /* bumped from .5rem */
+    font-size: .75rem;
+    line-height: 1rem;
+}
 
 /* “link-primary” utility should be Laravel red, not Tailwind blue */
-:where(.link-primary){ color: var(--color-primary) !important; }
-:where(.link-primary:hover){ color: color-mix(in oklab, var(--color-primary) 85%, black) !important; }
+:where(.link-primary) {
+    color: var(--color-primary) !important;
+}
+
+:where(.link-primary:hover) {
+    color: color-mix(in oklab, var(--color-primary) 85%, black) !important;
+}
 
 /* Timestamps / separators (like your `·` and “ago”) */
-.text-base-content\/60{ color: var(--text-10) !important; }
+.text-base-content\/60 {
+    color: var(--text-10) !important;
+}
 
 /* Footer strip */
-footer.footer{ background: var(--color-base-200); color: var(--text-10); }
+footer.footer {
+    background: var(--color-base-200);
+    color: var(--text-10);
+}
 
 
 /* 1) Links shouldn't style buttons (fixes blue anchor-buttons) */
-a:not(.btn) { color: var(--link); }
-a:not(.btn):hover { color: var(--link-hover); }
+a:not(.btn) {
+    color: var(--link);
+}
+
+a:not(.btn):hover {
+    color: var(--link-hover);
+}
 
 /* Anchor buttons keep button colors in all states */
 a.btn,
-a.btn:visited { color: inherit !important; text-decoration: none; }
+a.btn:visited {
+    color: inherit !important;
+    text-decoration: none;
+}
+
 a.btn-ghost,
-a.btn-ghost:visited { color: var(--text-12) !important; }
+a.btn-ghost:visited {
+    color: var(--text-12) !important;
+}
+
 a.btn-primary,
-a.btn-primary:visited { color: var(--color-primary-content) !important; }
+a.btn-primary:visited {
+    color: var(--color-primary-content) !important;
+}
+
 /* keep ghost text from turning blue on hover */
-a.btn-ghost:hover { color: var(--text-12) !important; }
+a.btn-ghost:hover {
+    color: var(--text-12) !important;
+}
 
 /* 2) Auth inputs full width inside cards/labels */
 .card .input,
 .card .textarea,
-.floating-label > input,
-.floating-label > .input,
-.floating-label > .textarea { width: 100%; }
+.floating-label>input,
+.floating-label>.input,
+.floating-label>.textarea {
+    width: 100%;
+}
 
 /* 3) Slightly rounder cards & fields (closer to Community) */
 :root:has(input.theme-controller[value=laravelChirper]:checked),
 [data-theme="laravelChirper"] {
-  --radius-box: 10px;   /* was 8px */
-  --radius-field: 8px;  /* was 6px */
-  --noise: 0;           /* was 1; Community look is clean */
+    --radius-box: 10px;
+    /* was 8px */
+    --radius-field: 8px;
+    /* was 6px */
+    --noise: 0;
+    /* was 1; Community look is clean */
 }
 
 /* ensure cards pick up the token over defaults */
-.card { border-radius: var(--radius-box) !important; }
+.card {
+    border-radius: var(--radius-box) !important;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400 !important;
+}
