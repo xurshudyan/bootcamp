@@ -190,6 +190,19 @@ a:hover {
     line-height: 1rem;
 }
 
+/* Toast-only success color */
+:where(.toast){
+    --color-success: #598b6e;
+    --color-success-content: #ffffff;
+  }
+
+  /* Hairline border + ensure text/icons pick up the content color */
+  :where(.toast .alert-success){
+    background: var(--color-success);
+    color: var(--color-success-content);
+    border: var(--border) solid rgba(0,0,0,0.08);
+  }
+
 /* “link-primary” utility should be Laravel red, not Tailwind blue */
 :where(.link-primary) {
     color: var(--color-primary) !important;
