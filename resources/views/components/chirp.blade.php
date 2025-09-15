@@ -1,13 +1,12 @@
 @props(['chirp'])
 
-<div class="card bg-base-100 shadow">
+<div class="card bg-base-100">
     <div class="card-body">
         <div class="flex space-x-3">
             <div class="avatar">
                 <div class="size-10 rounded-full">
-                    <img src="https://avatars.laravel.cloud/{{ urlencode($chirp->user->email) }}"
-                         alt="{{ $chirp->user->name }}'s avatar"
-                         class="rounded-full" />
+                    <img src="https://avatars.laravel.cloud/{{ urlencode($chirp->user->email) }}?vibe=ocean"
+                        alt="{{ $chirp->user->name }}'s avatar" class="rounded-full" />
                 </div>
             </div>
 
@@ -21,7 +20,7 @@
                         <p class="text-sm text-base-content/60">
                             {{ $chirp->created_at->diffForHumans() }}
                         </p>
-                        @if($chirp->updated_at->gt($chirp->created_at->addSeconds(5)))
+                        @if ($chirp->updated_at->gt($chirp->created_at->addSeconds(5)))
                             <span class="text-base-content/60">·</span>
                             <span class="text-sm text-base-content/60 italic">edited</span>
                         @endif
@@ -37,8 +36,8 @@
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit"
-                                        onclick="return confirm('Are you sure you want to delete this chirp?')"
-                                        class="btn btn-ghost btn-xs text-error">
+                                    onclick="return confirm('Are you sure you want to delete this chirp?')"
+                                    class="btn btn-ghost btn-xs text-error">
                                     Delete
                                 </button>
                             </form>
