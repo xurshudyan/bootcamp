@@ -149,7 +149,7 @@ a:hover {
     /* medium */
     font-size: 0.875rem;
     /* Tailwind text-base */
-    line-height: 1.5rem;
+    line-height: 1.25rem;
     /* align with text-base */
     padding-inline: 1rem;
     /* a bit more horizontal breathing room */
