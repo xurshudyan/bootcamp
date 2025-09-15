@@ -147,7 +147,7 @@ a:hover {
     box-shadow: none;
     font-weight: 500;
     /* medium */
-    font-size: 1rem;
+    font-size: 0.875rem;
     /* Tailwind text-base */
     line-height: 1.5rem;
     /* align with text-base */
