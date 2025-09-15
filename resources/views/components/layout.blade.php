@@ -9,10 +9,17 @@
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <meta property="og:image" content={{ asset('images/og.jpeg') }} />
+    <meta property="og:title" content="Chirper" />
+    <meta property="og:description"
+        content="A demo social media platform highlighting the power and simplicity of Laravel." />
+    <meta property="og:url"
+        content="https://chirper.laravel.cloud />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="min-h-screen flex flex-col bg-base-200 font-sans">
+<body class="min-h-screen flex flex-col
+        bg-base-200 font-sans">
     <nav class="navbar bg-base-100">
         <div class="navbar-start">
             <a href="/"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 505 68"
@@ -94,6 +101,6 @@
             </p>
         </div>
     </footer>
-</body>
+    </body>
 
 </html>
