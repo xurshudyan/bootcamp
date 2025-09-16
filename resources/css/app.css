@@ -25,7 +25,7 @@
     }
 }
 
-/* LIGHT THEME — Laravel Community vibe */
+/* CHIRPER CUSTOM LARAVEL THEME */
 :root:has(input.theme-controller[value=laravelChirper]:checked),
 [data-theme="laravelChirper"] {
   color-scheme: light;
