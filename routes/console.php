@@ -8,4 +8,4 @@ Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
 
-Schedule::command('chirps:delete-all', ['--force' => true])->hourly();
+Schedule::command('chirps:delete-all')->hourly();

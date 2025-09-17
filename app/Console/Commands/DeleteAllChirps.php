@@ -12,7 +12,7 @@ class DeleteAllChirps extends Command
      *
      * @var string
      */
-    protected $signature = 'chirps:delete-all {--force : Delete without confirmation}';
+    protected $signature = 'chirps:delete-all';
 
     /**
      * The console command description.
@@ -26,13 +26,6 @@ class DeleteAllChirps extends Command
      */
     public function handle(): int
     {
-        $force = $this->option('force');
-
-        if (!$force && !$this->confirm('Are you sure you want to delete all chirps?')) {
-            $this->info('Operation cancelled.');
-            return Command::SUCCESS;
-        }
-
         $count = Chirp::count();
         Chirp::truncate();
 
