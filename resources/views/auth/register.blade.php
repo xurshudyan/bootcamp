@@ -75,6 +75,12 @@
                                 Register
                             </button>
                         </div>
+
+                        <a href="{{ route('login.github') }}" class="button button-dark mb-4">
+    <span class="flex items-center justify-center">
+        Github
+    </span>
+                        </a>
                     </form>
 
                     <div class="divider">OR</div>
